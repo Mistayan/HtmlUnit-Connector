@@ -25,7 +25,7 @@ public class Main {
         // for time saving purpose, I chose to use stackoverflow.com for the demonstration.
         final String site = "https://stackoverflow.com/";
         System.out.println("Generating Connector for current session");
-        Connector connector = new Connector();
+        final Connector connector = new Connector();
         connector.setWebsite(site);
         connector.getPage(); // load website in browser
         System.out.printf("is %s on home page ? %s\n", args[2], connector.isloggedIn(args[2]));
@@ -33,14 +33,14 @@ public class Main {
         try {
             // forEach loop possible for search variations between sites
             final String search = "Log in";
-            HtmlAnchor anchor = connector.getPage().getAnchorByText(search);
+            final HtmlAnchor anchor = connector.getPage().getAnchorByText(search);
             connector.setPage(anchor.click());  // will emulate user clicking, therefore, changing page's content
             System.out.printf("currently on \"%s\" page\n", connector.getPage().getTitleText());
 
-            Set<Cookie> before = connector.getCookies();
+            final Set<Cookie> before = connector.getCookies();
             if (connector.login(args[0], args[1])) {
                 // check if operation were successful
-                Set<Cookie> after = connector.getCookies();
+                final Set<Cookie> after = connector.getCookies();
                 try {
                     if (before != null && after != null && before.size() != after.size() && connector.isloggedIn(args[2])) {
                         System.out.printf("%s Successfully logged-in.\nSession Cookie: %s\n",
