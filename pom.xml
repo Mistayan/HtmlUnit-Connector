@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.mistayan.java.trainings</groupId>
-    <artifactId>htmlUnit</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>htmlUnitConnector</name>
+    <artifactId>Connector</artifactId>
+    <version>0.2</version>
+    <name>htmlUnit-Connector</name>
     <packaging>jar</packaging>
     <description>
-        A solution that will log you on website's account and gather datas on it.
+        A program that will log you on website's account and gather datas on it.
     </description>
-    <url>https://github.com/Mistayan/htmlUnit</url>
+    <url>https://github.com/Mistayan/htmlUnit-Connector</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
