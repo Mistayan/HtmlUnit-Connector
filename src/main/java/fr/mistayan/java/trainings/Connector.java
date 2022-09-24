@@ -53,10 +53,10 @@ public class Connector {
     */
     public final HtmlPage getPage() {
         try {
-            return currentPage != null ? currentPage : (HtmlPage) webClient.getPage(this.website);
+            return currentPage == null ? (HtmlPage) webClient.getPage(this.website) : currentPage;
         } catch (IOException e) {
             System.err.printf("OOPS ! could not load %s page.", website);
-            return null;
+            return currentPage;
         }
     }
 
@@ -64,7 +64,6 @@ public class Connector {
         if (getPage() == null){
             throw new RuntimeException("Not on any page");
         }
-        System.err.println(getPage().getTitleText());
 
         final HtmlForm loginForm = getLoginForm();
         if (loginForm == null){
@@ -108,13 +107,13 @@ public class Connector {
 
     public Boolean isloggedIn(final String username){
         Pattern pattern = Pattern.compile(username);
-        Matcher matcher = pattern.matcher(currentPage.asXml());
+        Matcher matcher = pattern.matcher(getPage().asXml());
         return matcher.find();
     }
 
     public Boolean resolveCaptcha(){
         Pattern pattern = Pattern.compile("captcha");
-        Matcher matcher = pattern.matcher(currentPage.asXml());
+        Matcher matcher = pattern.matcher(getPage().asXml());
         return matcher.find();
     }
 }
