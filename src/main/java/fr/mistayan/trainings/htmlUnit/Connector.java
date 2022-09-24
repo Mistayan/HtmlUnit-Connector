@@ -1,4 +1,4 @@
-package fr.mistayan.java.trainings;
+package fr.mistayan.trainings.htmlUnit;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;

@@ -1,4 +1,4 @@
-package fr.mistayan.java.trainings;
+package fr.mistayan.trainings.htmlUnit;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.util.Cookie;
 
