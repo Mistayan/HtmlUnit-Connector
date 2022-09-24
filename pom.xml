@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.mistayan.java.trainings</groupId>
+    <artifactId>htmlUnit</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>htmlUnitConnector</name>
+    <packaging>jar</packaging>
+    <description>
+        A solution that will log you on website's account and gather datas on it.
+    </description>
+    <url>https://github.com/Mistayan/htmlUnit</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <additionalparam>-Xdoclint:none</additionalparam>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <htmlunitdriver.version>3.65.0-SNAPSHOT</htmlunitdriver.version>
+        <htmlunitcssparser.version>1.12.0</htmlunitcssparser.version>
+        <htmlunitneko.version>2.64.0</htmlunitneko.version>
+        <htmlunitcorejs.version>2.64.0</htmlunitcorejs.version>
+        <htmlunitxpath.version>2.65.0-SNAPSHOT</htmlunitxpath.version>
+
+        <httpcomponents.version>4.5.13</httpcomponents.version>
+        <log4j.version>2.19.0</log4j.version>
+
+        <!-- As a property, as it is included in Checkstyle build -->
+        <checkstyle.version>9.3</checkstyle.version>
+        <spotbugs.version>4.7.2</spotbugs.version>
+        <pmd.version>6.49.0</pmd.version>
+        <archunit.version>0.23.1</archunit.version>
+        <dependencycheck.version>7.2.1</dependencycheck.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.64.0</version> <!--CVE-2022-34169  : INCORRECT CONVERSION BETWEEN NUMERIC TYPES IN XALAN -->
+        </dependency>
+    </dependencies>
+
+</project>
